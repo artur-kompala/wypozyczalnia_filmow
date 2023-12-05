@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const testActions = require('../actions/api/test')
+const movieActions = require('../actions/api/movie')
 
 
-router.get('/', testActions.homepage) 
+router.get('/', movieActions.newMovie) 
 
 
 
