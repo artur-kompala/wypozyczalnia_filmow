@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const movieActions = require('../actions/api/movieActions.js')
+const movieActions = require('../actions/api/movieActions')
 
 
 router.get('/movies', movieActions.getAllMovies) 
