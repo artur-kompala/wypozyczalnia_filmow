@@ -1,9 +1,13 @@
+
 import './App.css';
+import Movies from './components/Movies';
+import Rent from './components/Rent';
 
 function App() {
   return (
     <div className="App">
-      <h1>DUPA</h1>
+        <Movies></Movies>
+        <Rent></Rent>
     </div>
   );
 }
