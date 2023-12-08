@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
 import Movies from "./Movies";
 
-export default function Movie({movie,handleDelete,handleEdit,handleEye,key}){
+export default function Movie({movie,handleDelete,handleEdit,handleEye,handleRent,key}){
 
     const [available,setAvailable] = useState("")
 
@@ -32,10 +32,14 @@ export default function Movie({movie,handleDelete,handleEdit,handleEye,key}){
             <th>{movie.gatunek}</th>
             <th>{movie.rezyser}</th>
             <th>{movie.czas_trwania}</th>
-            <th>{movie._id === available? '❌':'✅'}</th>
+            {movie._id === available?
+            <th><button  className="btn" >❌</button></th>:
+            <th><button  className="btn" onClick={()=>handleRent(movie)}>✅</button></th>
+            }
             <th><button  className="btn" onClick={()=>handleEye(movie)}>👁️</button></th>
             <th><button  className="btn" onClick={()=>handleEdit(movie)}>✏️</button></th>
             <th><button  className="btn" onClick={()=>handleDelete(movie)}>🗑️</button></th>
+            
         </tr>
         
     )

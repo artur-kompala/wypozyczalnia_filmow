@@ -1,13 +1,13 @@
 
 import './App.css';
 import Movies from './components/Movies';
-import Rent from './components/Rent';
+import Rents from './components/Rents';
 
 function App() {
   return (
     <div className="App">
         <Movies></Movies>
-        <Rent></Rent>
+        <Rents></Rents>
     </div>
   );
 }

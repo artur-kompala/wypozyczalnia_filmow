@@ -3,6 +3,7 @@ import Movie from "./Movie";
 import Eye from "./Eye";
 import DeleteMovie from "./DeleteMovie";
 import EditMovie from "./EditMovie"
+import RentMovie from "./RentMovie"
 
 export default function Movies(){
 
@@ -15,6 +16,7 @@ export default function Movies(){
         async function fetchMovies(){
             try{
                 const res = await fetch(`http://localhost:4000/api/movies/${query}`)
+                
                 
                 if(!res.ok) throw new Error("Smoething went wrong with fetching movies")
                 const data = await res.json()
@@ -45,6 +47,10 @@ export default function Movies(){
     function handleAdd(){
         setMode("add")
     }
+    function handleRent(movie){
+        setSelectMovie(movie)
+        setMode('rent')
+    }
     switch(mode) {
         case 'edit':
           return <EditMovie selectMovie={selectMovie} setMode={setMode} mode={mode}></EditMovie>
@@ -54,6 +60,8 @@ export default function Movies(){
             return <Eye selectMovie={selectMovie} setMode={setMode}></Eye>
         case 'delete':
           return <DeleteMovie selectMovie={selectMovie} setMode={setMode}></DeleteMovie>
+        case 'rent':
+            return <RentMovie selectMovie={selectMovie} setMode={setMode}></RentMovie>
         default:
             return (
         
@@ -72,10 +80,13 @@ export default function Movies(){
                             <th>Director</th>
                             <th>Duration</th>
                             <th>Available</th>
+                            <th>View details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {movies?.map((movie)=>(<Movie movie={movie} key={movie._id} handleEye={handleEye} handleDelete={handleDelete} handleEdit={handleEdit}></Movie>))}
+                        {movies?.map((movie)=>(<Movie movie={movie} key={movie._id} handleEye={handleEye} handleDelete={handleDelete} handleEdit={handleEdit} handleRent={handleRent}></Movie>))}
                     </tbody>
                 </table>
             </div>
