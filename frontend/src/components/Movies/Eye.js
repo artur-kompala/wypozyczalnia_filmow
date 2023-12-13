@@ -1,9 +1,7 @@
-export default function Eye({selectMovie,setMode}){
+export default function Eye({select,setMode}){
     return (
         <>
-            
             <table className="box list eye">
-            
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -17,24 +15,18 @@ export default function Eye({selectMovie,setMode}){
                     </thead>
                     <tbody>
                         <tr className="list-movies eye">
-                            <th>{selectMovie.tytul}</th>
-                            <th>{selectMovie.gatunek}</th>
-                            <th>{selectMovie.czas_trwania}</th>
-                            <th>{selectMovie.ocena}</th>
-                            <th>{selectMovie.opis}</th>
+                            <th>{select?.tytul}</th>
+                            <th>{select?.gatunek}</th>
+                            <th>{select?.czas_trwania}</th>
+                            <th>{select?.ocena}</th>
+                            <th>{select?.opis}</th>
                             
-                            <th>{selectMovie.rezyser}</th>
-                            <th><ul>{selectMovie.aktorzy.map((a)=><li>{a}</li>)}</ul></th>
+                            <th>{select?.rezyser}</th>
+                            <th><ul>{select?.aktorzy.map((a)=><li>{a}</li>)}</ul></th>
                         </tr>
                         
-                    </tbody>
-                    
-                    
-                
-                
-                
+                    </tbody> 
             </table>
-           
             <button className="btn-toggle" onClick={()=>setMode("")}>❌</button>
         </>
         

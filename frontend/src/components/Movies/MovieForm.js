@@ -1,16 +1,16 @@
 import React, { useState} from 'react';
 
-export default function MovieForm({mode,selectMovie}){
+export default function MovieForm({mode,select}){
     
     const [formData, setFormData] = useState({
-        tytul: mode === "edit" ? selectMovie.tytul :'',
-        gatunek: mode === "edit" ? selectMovie.gatunek :'',
-        rezyser: mode === "edit" ? selectMovie.rezyser :'',
-        czas_trwania: mode === "edit" ? selectMovie.czas_trwania :0,
-        ocena: mode === "edit" ? selectMovie.ocena :0,
-        opis: mode === "edit" ? selectMovie.opis :'',
-        aktorzy: mode === "edit" ? selectMovie.aktorzy :'',
-        data_dodania: mode === "edit" ? selectMovie.data_dodania :'',
+        tytul: mode === "edit" ? select.tytul :'',
+        gatunek: mode === "edit" ? select.gatunek :'',
+        rezyser: mode === "edit" ? select.rezyser :'',
+        czas_trwania: mode === "edit" ? select.czas_trwania :0,
+        ocena: mode === "edit" ? select.ocena :0,
+        opis: mode === "edit" ? select.opis :'',
+        aktorzy: mode === "edit" ? select.aktorzy :'',
+        data_dodania: mode === "edit" ? select.data_dodania :'',
       });
     
     
@@ -38,7 +38,7 @@ export default function MovieForm({mode,selectMovie}){
       }));
   
       try {
-        const response = await fetch(`http://localhost:4000/api/movies${mode === "edit" ? `/${selectMovie._id}`:""}`, {
+        const response = await fetch(`http://localhost:4000/api/movies${mode === "edit" ? `/${select._id}`:""}`, {
           method: mode === "edit" ? 'PUT':"POST",
           headers: {
             'Content-Type': 'application/json',

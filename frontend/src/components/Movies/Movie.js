@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
-import Movies from "./Movies";
 
-export default function Movie({movie,handleDelete,handleEdit,handleEye,handleRent,key}){
+
+export default function Movie({movie,handleDelete,handleEdit,handleEye,handleRent,key,index}){
 
     const [available,setAvailable] = useState("")
 
@@ -24,10 +24,9 @@ export default function Movie({movie,handleDelete,handleEdit,handleEye,handleRen
 
     },[])
     
-    
-    
     return(
         <tr className="list-movies">
+            <th>{index+1}</th>
             <th>{movie.tytul}</th>
             <th>{movie.gatunek}</th>
             <th>{movie.rezyser}</th>
@@ -39,7 +38,6 @@ export default function Movie({movie,handleDelete,handleEdit,handleEye,handleRen
             <th><button  className="btn" onClick={()=>handleEye(movie)}>👁️</button></th>
             <th><button  className="btn" onClick={()=>handleEdit(movie)}>✏️</button></th>
             <th><button  className="btn" onClick={()=>handleDelete(movie)}>🗑️</button></th>
-            
         </tr>
         
     )

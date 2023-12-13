@@ -30,39 +30,6 @@ export default function Rents(){
 
     },[query,mode,change])
 
-   
-
-    function handleEye(rent){
-        setSelectRent(rent)
-        setMode("eye")
-    }
-    function handleDelete(rent){
-        setSelectRent(rent)
-        setMode("delete")
-    }
-    function handleEdit(rent){
-        setSelectRent(rent)
-        setMode("edit")
-    }
-    function handleAdd(){
-        setMode("add")
-    }
-    function handleRent(rent){
-        setSelectRent(rent)
-        setMode('rent')
-    }
-    switch(mode) {
-        case 'edit':
-          return 
-        case 'add':
-            return 
-        case 'eye':
-            return 
-        case 'delete':
-          return 
-        case 'rent':
-            return 
-        default:
             return (
         
         
@@ -89,7 +56,7 @@ export default function Rents(){
             </div>
             )
         
-      }
+      
     
   
     

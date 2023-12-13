@@ -17,5 +17,8 @@ router.put('/rents/:id', rentActions.updateRent)
 router.post('/rents', rentActions.newRent)  
 router.get('/customers', customerActions.getAllCustomer) 
 router.get('/customers/:id', customerActions.getCustomer) 
+router.delete('/customers/:id', customerActions.deleteMovie) 
+router.post('/customers', customerActions.newCustomer)
+router.put('/customers/:id', customerActions.updateCustomer)   
 
 module.exports = router;
